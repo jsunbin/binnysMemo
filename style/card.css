@@ -1,4 +1,4 @@
-.wrapper {
+/* .wrapper {
   width: 310px;
   height: 412px;
   padding: 10px;
@@ -55,4 +55,99 @@ textarea {
   float: right;
   width: 60px;
   height: 30px;
+} */
+
+/* ===== v2 ===== */
+@font-face {
+  font-family: 'KyoboHand';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/KyoboHand.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.a11y-hidden {
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+}
+
+div,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+.paper-area {
+  font-family: 'kyobohand';
+  font-size: 15px;
+  width: 258px;
+  height: 300px;
+  min-height: 300px;
+  background: #F8BBD0;
+}
+
+.memo-head {
+  position: relative;
+  height: 34px;
+  padding: 14px 14px 0;
+  line-height: 34px;
+  border-bottom: 1px solid #C990A3;
+}
+
+.memo-head .square {
+  background: #C990A3;
+  width: 20px;
+  height: 20px;
+  min-height: 20px;
+  float: left;
+  margin-right: 15px;
+  }
+
+  .memo-head .square:last-child{
+    margin: 0px;
+  }
+
+.memo-area {
+  height: 227px;
+  padding: 14px 20px 0 14px;
+  box-sizing: border-box;
+}
+
+textarea {
+  width: 222px;
+  height: 206px;
+  font-family: 'kyobohand';
+  color: #503941;
+  font-size: 15px;
+  background-color: inherit;
+  border: none;
+  resize: none;
+}
+
+textarea::placeholder {
+  color: #C990A3;
+  font-size: 15px;
+}
+
+
+.memo-footer {
+  height: 24px;
+  padding: 0 14px;
+  position: relative;
+}
+
+.edit-area {
+  position: absolute;
+  top: 0;
+  right: 11px;
+}
+
+.delete-btn {
+  background: none;
+  border: none;
 }

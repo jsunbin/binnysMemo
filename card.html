@@ -5,11 +5,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>common</title>
-  <link rel="stylesheet" href="./style/common.css">
+  <link rel="stylesheet" href="./style/card.css">
 </head>
 
 <body>
-  <div class="wrapper">
+  <!-- <div class="wrapper">
     <div class="main">
       <section>
         <input type="text" name="" id="title" />
@@ -18,6 +18,31 @@
         <div class="modified-date">2023/04/22</div>
       </section>
       <section id="display"></section>
+    </div>
+  </div> -->
+
+  <!-- ===== v2 ===== -->
+  <div class="paper-area">
+    <div class="memo-head">
+      <div class="square"></div>
+      <div class="square"></div>
+      <div class="square"></div>
+      <div class="square"></div>
+      <div class="square"></div>
+      <div class="square"></div>
+      <div class="square"></div>
+    </div>
+    <div class="memo-area">
+      <textarea id="editMemo" cols="" rows="" placeholder="간단하게 메모를 작성해보세요"></textarea>
+    </div>
+    <div class="memo-footer">
+      <p class="update_time">
+        <span class="a11y-hidden">작성 시간 : </span>
+        2023.04.26 03:10
+      </p>
+      <div class="edit-area">
+        <button class="delete-btn" type="button"><img src="./image/bin.png" alt="삭제하기"></button>
+      </div>
     </div>
   </div>
 
