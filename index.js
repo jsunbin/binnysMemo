@@ -10,11 +10,10 @@
  */
 
 let savedMemoList = [];
-let memoExist = false;
 
 function hideNoMemo() {
-  const noMemo = document.querySelector('.no-memo-text');
-  noMemo.classList.add('none');
+  const noMemo = document.querySelector('#emptyMemo');
+  noMemo.setAttribute('style', 'display: none');
 };
 
 function checkLocalStorage() {
@@ -23,52 +22,93 @@ function checkLocalStorage() {
   if (localSavedMemo) {
     savedMemoList = JSON.parse(localSavedMemo);
     memoExist = true;
-    showMemo(savedMemoList, memoExist);
+    showMemo(savedMemoList);
     hideNoMemo();
   };
 
+}
+
+function clearMemo() {
+  document.querySelector('#editMemo').value = "";
+}
+
+function showMemo(savedMemoList) {
+  const container = document.querySelector(".saved-paper");
+  let memoList = [];
+  savedMemoList.forEach(el => {
+    const newMemo = `
+      <div class="wrap-paper">
+        <div class="paper-area">
+          <div class="memo-head">
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square"></div>
+          </div>
+          <div class="memo-area">
+            <textarea id="editMemo" cols="" rows="" placeholder="간단하게 메모를 작성해보세요">${el.memo}</textarea>
+          </div>
+          <div class="memo-footer">
+            <p class="update-time">
+              <span class="a11y-hidden">작성 시간 : </span>
+              ${el.date}
+            </p>
+            <div class="edit-area">
+              <button class="edit-btn" type="button"><img src="./image/eraser.png"></button>
+              <button class="delete-btn" type="button"><img src="./image/bin.png" alt="삭제하기"></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    `;
+    memoList.push(newMemo);
+  });
+
+  container.innerHTML = memoList.reverse().join("")
 };
 
-function showMemo(savedMemoList, memoExist) {
-  console.log(savedMemoList);
-  if (memoExist) {
-    savedMemoList.forEach(el => {
-      makeElementForMemo(el);
-    });
-  } else {
-    const lastMemoInfo = savedMemoList[savedMemoList.length-1];
-    makeElementForMemo(lastMemoInfo);
-  };
-};
+function makeElForNew(memoInfo) {
+  const container = document.querySelectorAll(".saved-paper");
 
+  const newMemo = `
+    <div class="wrap-paper">
+      <div class="paper-area">
+        <div class="memo-head">
+          <div class="square"></div>
+          <div class="square"></div>
+          <div class="square"></div>
+          <div class="square"></div>
+          <div class="square"></div>
+          <div class="square"></div>
+          <div class="square"></div>
+        </div>
+        <div class="memo-area">
+          <textarea id="editMemo" cols="" rows="" placeholder="간단하게 메모를 작성해보세요">${memoInfo.memo}</textarea>
+        </div>
+        <div class="memo-footer">
+          <p class="update-time">
+            <span class="a11y-hidden">작성 시간 : </span>
+            ${memoInfo.date}
+          </p>
+          <div class="edit-area">
+            <button class="save-btn" type="button"><img src="./image/check.png">저장하기</button>
+            <!-- <button class="delete-btn" type="button"><img src="./image/bin.png" alt="삭제하기"></button> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  `;
 
-function makeElementForMemo(memoInfo){
-  const memoList = document.querySelector('.memo-list');
+  newMemoList.push(newMemo);
 
-  let memoLiElement = document.createElement('li');
-  let titleElement = document.createElement('h3');
-  let contentElement = document.createElement('p');
-  let dateElement = document.createElement('span');
-  dateElement.classList.add('memo-modified-info');
-
-  titleElement.textContent = memoInfo.title === '' ? '제목 없음' : getMemoTitle();
-  contentElement.textContent = memoInfo.content === '' ? '내용없음' : memoInfo.content;
-  console.log(memoInfo.content)
-  dateElement.textContent = memoInfo.date;
-
-  memoLiElement.append(titleElement, contentElement, dateElement);
-  memoList.append(memoLiElement);
-};
-
-
-function getMemoTitle() {
-  const memoTitle = document.querySelector('#title').value;
-
-  return memoTitle
+  container.innerHTML = savedMemoList.join("");
 }
 
 function getMemoContent() {
-  const memoContent = document.querySelector('#content').value;
+  const memoContent = document.querySelector('#editMemo').value;
 
   return memoContent
 }
@@ -99,28 +139,28 @@ function updateModifiedDate() {
 }
 
 function makeMemoList() {
-  console.log('make list')
-  const memoTitle = getMemoTitle();
   const memoContent = getMemoContent();
   const lastModifiedDate = updateModifiedDate();
   memoExist = false;
 
-  savedMemoList.push({id: savedMemoList.length, title: memoTitle, content: memoContent, date: lastModifiedDate})
+  savedMemoList.push({id: savedMemoList.length, memo: memoContent, date: lastModifiedDate})
 
   // 로컬스토리지에 저장
   window.localStorage.setItem('savedMemo', JSON.stringify(savedMemoList))
 
+  console.log(savedMemoList)
   // 보여주기
-  showMemo(savedMemoList, memoExist)
+  showMemo(savedMemoList, memoExist);
   // return savedMemoList
 };
+
+
 
 window.onload = function () {
   checkLocalStorage();
 }
 
 function saveMemo() {
-  console.log('clicked');
-  hideNoMemo();
   makeMemoList();
+  clearMemo();
 }

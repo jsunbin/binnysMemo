@@ -82,13 +82,19 @@ p {
   padding: 0;
 }
 
+button {
+  background: none;
+  border: none;
+}
+
 .paper-area {
   font-family: 'kyobohand';
   font-size: 15px;
   width: 258px;
-  height: 300px;
+  height: 310px;
   min-height: 300px;
   background: #F8BBD0;
+  border-radius: 17px;
 }
 
 .memo-head {
@@ -113,7 +119,7 @@ p {
   }
 
 .memo-area {
-  height: 227px;
+  height: 230px;
   padding: 14px 20px 0 14px;
   box-sizing: border-box;
 }
@@ -136,18 +142,45 @@ textarea::placeholder {
 
 
 .memo-footer {
-  height: 24px;
+  height: 31px;
   padding: 0 14px;
   position: relative;
 }
 
+.update-time {
+  display: inline-block;
+  line-height: 26px;
+}
+
 .edit-area {
+  display: inline-block;
+  line-height: 26px;
   position: absolute;
   top: 0;
   right: 11px;
 }
 
+.save-btn {
+  display: inline-block;
+  border: 1px solid #ca8ea2;
+  background-color: #f4e8ec;
+  border-radius: 8px;
+  height: 26px;
+  padding: 0 4px;
+}
+
+.save-btn img {
+  vertical-align: text-bottom;
+  margin-right: 3px;
+}
+
+.edit-btn,
 .delete-btn {
-  background: none;
-  border: none;
+  display: inline-block;
+  padding: 1px 6px;
+}
+
+.edit-btn img,
+.delete-btn img {
+  vertical-align: top;
 }

@@ -2,6 +2,7 @@ body,
 h1,
 h2,
 h3,
+button,
 ul,
 li,
 p {
@@ -12,10 +13,6 @@ p {
 a {
   color: inherit;
   text-decoration: none;
-}
-
-ul, li {
-  list-style: none;
 }
 
 .a11y-hidden {
@@ -29,13 +26,10 @@ ul, li {
   position: absolute;
 }
 
-.none {
-  display: none;
-}
-
 header {
   background-color: white;
 }
+
 .header-wrap {
   width: 1224px;
   max-width: calc(100% - 60px);
@@ -45,41 +39,49 @@ header {
   align-items: center;
 }
 
-/* .main-inner {
+main {
   width: 1224px;
   max-width: calc(100% - 60px);
   margin: auto;
-  display: flex;
-} */
-
-main {
-  display: flex;
-  /* width: 1224px;
-  max-width: calc(100% - 60px); */
-  margin: 30px;
 }
 
-.left-area {
-  /* width: 737px; */
-  margin-right: 60px;
+.group-paper .wrap-paper {
+  width: 258px;
+  float: left;
+  /* display: none; */
 }
 
-.right-area {
-  width: 737px;
+.wrap-paper {
+  margin: 14px 30px 0 0 ;
 }
 
-.memo-list {
-  width: 100%;
-  margin-right: 30px;
-}
-.memo-list li{
-  padding: 10px;
-  border-bottom: 1px solid black;
-}
-.memo-list li:not(:first-child) {
-  margin-top: 30px;
+.none-memo {
+  display: block;
+  text-align: center;
 }
 
-.memo-modified-info {
-  color: #6b6d72;
+.ico-none {
+  display: block;
+  width: 128px;
+  height: 128px;
+  margin: 10px auto;
+  background: url(../image/note.png) no-repeat center center / 128px;
+}
+
+.none-memo p {
+  margin: 14px;
+}
+.write-btn {
+  display: block;
+  height: 27px;
+  line-height: 27px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+.ico-write {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  vertical-align: text-bottom;
+  background: url(../image/pen.png) no-repeat center center / 16px;
 }
