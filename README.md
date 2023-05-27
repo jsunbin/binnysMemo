@@ -1,2 +1,2 @@
 # binnysMemo
-Benny's Memo
+Binny's Memo
