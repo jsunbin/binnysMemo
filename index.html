@@ -1,73 +1,75 @@
 <!DOCTYPE html>
 <html lang="ko-KR">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>🗓️ 나만의 메모장</title>
-  <link rel="stylesheet" href="./style/style.css">
-  <link rel="stylesheet" href="./style/card.css">
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>🗓️ BINNY's MEMO</title>
+    <link rel="stylesheet" href="./style/style.css" />
+    <link rel="stylesheet" href="./style/card.css" />
+  </head>
 
-<body>
-  <header>
-    <div class="header-wrap">
-      <h1><a href="./">BINNY's MEMO</a></h1>
-    </div>
-  </header>
+  <body>
+    <header>
+      <div class="header-wrap">
+        <h1><a href="./">🗓️ BINNY's MEMO</a></h1>
+      </div>
+    </header>
 
-  <main>
-    <div class="function">
-    </div>
-    <div class="memo-content">
-      <div class="group-paper">
-        <div class="wrap-paper first-memo">
-          <div class="paper-area">
-            <div class="memo-head">
-              <div class="square"></div>
-              <div class="square"></div>
-              <div class="square"></div>
-              <div class="square"></div>
-              <div class="square"></div>
-              <div class="square"></div>
-              <div class="square"></div>
-            </div>
-            <div class="memo-area">
-              <textarea id="editMemo" cols="" rows="" placeholder="간단하게 메모를 작성해보세요"></textarea>
-            </div>
-            <div class="memo-footer">
-              <p class="update-time a11y-hidden">
-                <span class="a11y-hidden">작성 시간 : </span>
-                2023.04.26 03:10
-              </p>
-              <div class="edit-area">
-                <button class="save-btn" type="button" onclick="saveMemo();"><img src="./image/check.png">저장하기</button>
-                <!-- <button class="delete-btn" type="button"><img src="./image/bin.png" alt="삭제하기"></button> -->
+    <main>
+      <div class="function"></div>
+      <div class="memo-content">
+        <div class="group-paper">
+          <div class="wrap-paper first-memo">
+            <div class="paper-area">
+              <div class="memo-head">
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+              </div>
+              <div class="memo-area">
+                <textarea
+                  id="editMemo"
+                  cols=""
+                  rows=""
+                  placeholder="간단하게 메모를 작성해보세요"
+                ></textarea>
+              </div>
+              <div class="memo-footer">
+                <p class="update-time a11y-hidden">
+                  <span class="a11y-hidden">작성 시간 : </span>
+                  2023.04.26 03:10
+                </p>
+                <div class="edit-area">
+                  <button class="save-btn" type="button">
+                    <img src="./image/check.png" />저장하기
+                  </button>
+                </div>
               </div>
             </div>
           </div>
+
+          <div class="saved-paper"></div>
         </div>
-  
-        <div class="saved-paper">
+
+        <div id="emptyMemo" class="none-memo" style="display: none">
+          <h2 class="none-memo-title">
+            <span class="ico-none"></span>
+            메모가 없습니다.
+          </h2>
+          <p>간단한 메모를 작성해보세요.</p>
+          <button type="button" class="write-btn">
+            <span class="ico-write"></span>
+            새 메모쓰기
+          </button>
         </div>
       </div>
-      
-      <div id="emptyMemo" class="none-memo" style="display: none;">
-        <h2 class="none-memo-title">
-          <span class="ico-none"></span>
-          메모가 없습니다.
-        </h2>
-        <p>
-          간단한 메모를 작성해보세요.
-        </p>
-        <button type="button" class="write-btn">
-          <span class="ico-write"></span>
-          새 메모쓰기
-        </button>
-      </div>
-    </div>
-  </main>
-  
-  <script src="index.js"></script>
-</body>
+    </main>
+
+    <script src="./js/index.js"></script>
+  </body>
 </html>

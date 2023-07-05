@@ -124,7 +124,7 @@ button {
   box-sizing: border-box;
 }
 
-textarea {
+.memo-area textarea {
   width: 222px;
   height: 206px;
   font-family: 'kyobohand';
@@ -133,9 +133,10 @@ textarea {
   background-color: inherit;
   border: none;
   resize: none;
+  outline: none;
 }
 
-textarea::placeholder {
+.memo-area textarea::placeholder {
   color: #C990A3;
   font-size: 15px;
 }
@@ -166,6 +167,7 @@ textarea::placeholder {
   background-color: #f4e8ec;
   border-radius: 8px;
   height: 26px;
+  cursor: pointer;
   padding: 0 4px;
 }
 
@@ -177,6 +179,7 @@ textarea::placeholder {
 .edit-btn,
 .delete-btn {
   display: inline-block;
+  cursor: pointer;
   padding: 1px 6px;
 }
 
