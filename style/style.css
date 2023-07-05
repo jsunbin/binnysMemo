@@ -40,12 +40,10 @@ header {
 }
 
 main {
-  width: 1224px;
-  /* max-width: calc(100% - 60px); */
   width: 100%;
   min-width: 606px;
-  margin: auto;
-  padding: 0 30px
+  margin: 0 auto;
+  padding: 0 30px;
 }
 
 .group-paper .wrap-paper {

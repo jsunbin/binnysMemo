@@ -163,6 +163,7 @@ button {
 
 .save-btn {
   display: inline-block;
+  color: inherit;
   border: 1px solid #ca8ea2;
   background-color: #f4e8ec;
   border-radius: 8px;
