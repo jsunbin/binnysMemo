@@ -67,8 +67,8 @@ main {
   display: block;
   width: 128px;
   height: 128px;
-  margin: 10px auto;
   background: url(../image/note.png) no-repeat center center / 128px;
+  margin: 10px auto;
 }
 
 .none-memo p {
@@ -78,8 +78,8 @@ main {
   display: block;
   height: 27px;
   line-height: 27px;
-  margin: 0 auto;
   padding: 0 10px;
+  margin: 0 auto;
 }
 .ico-write {
   display: inline-block;
@@ -90,14 +90,14 @@ main {
 }
 
 .edit-memo {
-  background-color: rgba(0,0,0,.3);
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
   bottom: 0;
   left: 0;
-  position: fixed;
-  right: 0;
-  top: 0;
+  background-color: rgba(0,0,0,.3);
   z-index: 100;
-  display: none;
 }
 
 .edit-memo.active {
@@ -108,6 +108,27 @@ main {
   position: absolute;
   top: 30%;
   left: 30%;
-  margin: 0;
   padding: 0;
+  margin: 0;
+}
+
+@media (max-width: 605px) {
+  main {
+    width: 100%;
+    min-width: 318px;
+    max-width: 605px;
+    padding: 0 30px;
+    margin: 0 auto;
+  }
+
+  .header-wrap a {
+    display: flex;
+    min-width: 155px;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .header-wrap span {
+    margin-left: 15px;
+  }
 }
