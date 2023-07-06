@@ -88,3 +88,26 @@ main {
   vertical-align: text-bottom;
   background: url(../image/pen.png) no-repeat center center / 16px;
 }
+
+.edit-memo {
+  background-color: rgba(0,0,0,.3);
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 100;
+  display: none;
+}
+
+.edit-memo.active {
+  display: block;
+}
+
+.edit-memo .wrap-paper {
+  position: absolute;
+  top: 30%;
+  left: 30%;
+  margin: 0;
+  padding: 0;
+}
