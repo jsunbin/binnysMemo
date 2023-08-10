@@ -2,7 +2,7 @@
 
 간단한 메모를 작성하고 저장할 수 있는 웹 애플리케이션입니다.
 
-지금 바로 확인하기! ➡️ [📝 Binny's Memo](https://jsunbin.github.io/binnysMemo/
+지금 바로 확인하기! [📝 Binny's Memo](https://jsunbin.github.io/binnysMemo/
 )
 ## ✨ 기능
 
