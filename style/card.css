@@ -178,14 +178,29 @@ button {
   margin-right: 3px;
 }
 
+.delete-btn {
+  display: inline-block;
+  cursor: pointer;
+}
+
+.star-btn,
 .edit-btn,
 .delete-btn {
   display: inline-block;
   cursor: pointer;
-  padding: 1px 6px;
+  width: 28px;
+  height: 18px;
+  vertical-align: middle;
 }
-
-.edit-btn img,
-.delete-btn img {
-  vertical-align: top;
+.star-btn {
+  background: url("../image/star.png") center no-repeat;
+}
+.star-btn.on {
+  background: url("../image/star_filled.png") center no-repeat;
+}
+.edit-btn {
+  background: url("../image/eraser.png") center no-repeat;
+}
+.delete-btn {
+  background: url("../image/bin.png") center no-repeat;
 }
